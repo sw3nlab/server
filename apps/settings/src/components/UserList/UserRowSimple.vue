@@ -33,7 +33,12 @@
 			{{ userSubAdminsGroupsLabels }}
 		</div>
 		<div class="quota">
-			{{ userQuota }} ({{ usedSpace }})
+			<span> {{ userQuota }} ({{ usedSpace }}) </span>
+			<progress
+				class="quota-user-progress"
+				:class="{'warn': usedQuota > 80}"
+				:value="usedQuota"
+				max="100" />
 		</div>
 		<div v-if="showConfig.showLanguages" class="languages">
 			{{ userLanguage.name }}
@@ -149,7 +154,7 @@ export default {
 				return t('settings', '{size}', { size: OC.Util.humanFileSize(this.user.quota.quota) })
 			}
 			return t('settings', '{size}', { size: OC.Util.humanFileSize(0) })
-		}
+		},
 
 	},
 	methods: {

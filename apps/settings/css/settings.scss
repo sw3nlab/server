@@ -1680,6 +1680,7 @@ doesnotexist:-o-prefocus, .strengthify-wrapper {
 
 				&.quota {
 					height: 44px;
+					min-width: $grid-col-min-width;
 					display: flex;
 					align-items: center;
 					justify-content: center;
@@ -1688,6 +1689,11 @@ doesnotexist:-o-prefocus, .strengthify-wrapper {
 						width: 100%;
 						margin: 0 10px;
 						height: 3px;
+						position: absolute;
+						bottom: 0;
+					}
+					span {
+						margin-left: 10px;
 					}
 				}
 
